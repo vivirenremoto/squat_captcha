@@ -4,6 +4,7 @@
 <head>
     <title>Squat captcha</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <script>
         var face_model_base_url = 'https://raw.githubusercontent.com/vivirenremoto/squat_captcha/master/';
@@ -33,6 +34,35 @@
             width: 45%;
             float: left;
         }
+
+        #webcam_content {
+            background: black;
+            width: 640px;
+            height: 480px;
+        }
+
+        #box_squats {
+            position: relative;
+            font-size: 55px;
+            margin-top: 100px;
+            text-align: center;
+        }
+
+        @media only screen and (max-width: 480px) {
+            #webcam_content video {
+                max-width: 100%;
+            }
+
+            .margin {
+                width: 100%;
+                float: none;
+            }
+
+            #box_squats {
+                font-size: 30px;
+                margin-top: 50px;
+            }
+        }
     </style>
 
 
@@ -46,13 +76,12 @@
 
 
         <div style="position: relative" class="margin">
-            <div style="background:black;width:640px;height:480px;">
+            <div id="webcam_content">
                 <video onloadedmetadata="onPlay(this)" id="inputVideo" autoplay muted playsinline></video>
                 <canvas id="overlay" />
             </div>
         </div>
-        <div id="box_squats" style="position: relative;font-size:55px;margin-top:100px;text-align:center;"
-            class="margin">
+        <div id="box_squats" class="margin">
             <span id="pending_squats">0</span> squats left to continue</span>
             <br>
             <img src="squats.gif" height="300">
