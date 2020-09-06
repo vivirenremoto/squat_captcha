@@ -6,7 +6,7 @@ The demo works with chrome/firefox, desktop environment and also a webcam.
 
 ## Demo
 
-[https://vivirenremoto.com/squat_captcha/](https://vivirenremoto.com/squat_captcha/)
+[https://vivirenremoto.github.io/squat_captcha/sample-form.html](https://vivirenremoto.github.io/squat_captcha/sample-form.html)
 
 ## Information
 
