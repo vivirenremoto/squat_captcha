@@ -39,6 +39,7 @@
             background: black;
             width: 640px;
             height: 480px;
+            overflow: hidden;
         }
 
         #box_squats {
@@ -58,8 +59,9 @@
                 overflow-x: hidden;
             }
 
-            #webcam_content {
-                margin-left: -50%;
+            #webcam_control {
+                margin-left: -25%;
+                position: relative;
             }
 
             .margin {
@@ -89,7 +91,7 @@
         </div>
 
 
-        <div style="position: relative" class="margin">
+        <div style="position: relative" class="margin" id="webcam_control">
             <div id="webcam_content">
                 <video onloadedmetadata="onPlay(this)" id="inputVideo" autoplay muted playsinline></video>
                 <canvas id="overlay" />
