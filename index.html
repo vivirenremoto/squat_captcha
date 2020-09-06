@@ -48,25 +48,36 @@
             text-align: center;
         }
 
+        #squat_animation {
+            height: 300px;
+        }
+
         @media only screen and (max-width: 480px) {
-            #webcam_content {
-                width: 100%;
-                height: 480px;
-            }
-
-            #webcam_content video {
+            body {
                 max-width: 100%;
+                overflow-x: hidden;
             }
 
-            .margin {
-                width: 100%;
-                float: none;
+            #webcam_content {
+                margin-left: -50%;
             }
+        }
 
-            #box_squats {
-                font-size: 30px;
-                margin-top: 50px;
-            }
+
+        .margin {
+            width: 100%;
+            float: none;
+            margin: 0;
+        }
+
+        #box_squats {
+            font-size: 25px;
+            margin-top: 50px;
+        }
+
+        #squat_animation {
+            height: 200px;
+        }
         }
     </style>
 
@@ -89,7 +100,7 @@
         <div id="box_squats" class="margin">
             <span id="pending_squats">0</span> squats left to continue</span>
             <br>
-            <img src="squats.gif" height="300">
+            <img src="squats.gif" id="squat_animation">
         </div>
 
 
