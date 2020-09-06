@@ -1989,8 +1989,8 @@
         }
         if (uri === '/') {
             return {
-                modelBaseUri: 'https://raw.githubusercontent.com/vivirenremoto/squat_captcha/master/',
-                manifestUri: "https://raw.githubusercontent.com/vivirenremoto/squat_captcha/master/" + defaultManifestFilename
+                modelBaseUri: face_model_base_url,
+                manifestUri: face_model_base_url + defaultManifestFilename
             };
         }
         var protocol = uri.startsWith('http://') ? 'http://' : uri.startsWith('https://') ? 'https://' : '';
