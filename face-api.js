@@ -1983,14 +1983,14 @@
         var defaultManifestFilename = defaultModelName + "-weights_manifest.json";
         if (!uri) {
             return {
-                modelBaseUri: 'https://raw.githubusercontent.com/vivirenremoto/squat_captcha/master/',
+                modelBaseUri: '',
                 manifestUri: defaultManifestFilename
             };
         }
         if (uri === '/') {
             return {
-                modelBaseUri: '/',
-                manifestUri: "/" + defaultManifestFilename
+                modelBaseUri: 'https://raw.githubusercontent.com/vivirenremoto/squat_captcha/master/',
+                manifestUri: "https://raw.githubusercontent.com/vivirenremoto/squat_captcha/master/" + defaultManifestFilename
             };
         }
         var protocol = uri.startsWith('http://') ? 'http://' : uri.startsWith('https://') ? 'https://' : '';
