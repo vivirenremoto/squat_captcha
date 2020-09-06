@@ -2,7 +2,7 @@
 
 This captcha forces you to do 10 squats to continue.
 
-The demo works with chrome/firefox, desktop environment and also a webcam.
+This demo works with chrome/firefox, desktop environment and also a webcam.
 
 ## Demo
 
