@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Form with Squat Captcha</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+
+<body>
+
+    <style>
+        label,
+        input {
+            display: block;
+        }
+    </style>
+
+    <h1>Form with Squat Captcha</h1>
+
+    <form id="form">
+
+        <p>
+            <label>Name</label>
+            <input name="name">
+        </p>
+        <p>
+            <label>Email</label>
+            <input name="email">
+        </p>
+        <p>
+            <button type="submit">Submit</button>
+        </p>
+
+    </form>
+
+
+
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script>
+        var captcha_done = false;
+        var captcha_url = 'https://vivirenremoto.github.io/squat_captcha/';
+
+        function captcha_complete(e) {
+            if (e.origin.indexOf('vivirenremoto.github.io') > -1) {
+                captcha_done = true;
+                jQuery('#squat_captcha').remove();
+                alert('form submit');
+            }
+        }
+
+
+        function showCaptcha() {
+            if (captcha_done == false) {
+                jQuery('body').append('<iframe allow="camera;microphone" id="squat_captcha" src="' + captcha_url + '" style="background:#fff;border:0;position:fixed;top:0;left:0;width:100%;height:100%;"></iframe>');
+                window.addEventListener('message', captcha_complete, false);
+            }
+        }
+
+        jQuery(function () {
+            $('#form').submit(function () {
+                if (!captcha_done) {
+                    showCaptcha();
+                    event.preventDefault();
+                    return;
+                }
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>
